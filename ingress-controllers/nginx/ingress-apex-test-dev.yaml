@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apex-test-dev
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+      - path: /apex
+        backend:
+          serviceName: apexdevords-apexords-nodeport-svc
+          servicePort: 80
