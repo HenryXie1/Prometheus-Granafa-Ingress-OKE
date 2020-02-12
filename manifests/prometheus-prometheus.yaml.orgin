@@ -20,16 +20,6 @@ spec:
   resources:
     requests:
       memory: 400Mi
-  storage:
-    volumeClaimTemplate:
-      spec:
-        storageClassName: "oci"
-        selector:
-          matchLabels:
-            app: prometheus
-        resources:
-          requests:
-            storage: 100Gi
   ruleSelector:
     matchLabels:
       prometheus: k8s
